@@ -1,0 +1,30 @@
+{
+  "name": "AWS Header Colorizer (Configurable)",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Colorize AWS Console headers based on account ID",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.console.aws.amazon.com/*",
+    "https://*.console.aws.amazon.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.console.aws.amazon.com/*",
+        "https://*.console.aws.amazon.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "AWS Header Colorizer",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AWS Header Colorizer Settings</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    h1 { font-size: 1.2rem; }
+    table { border-collapse: collapse; margin-top: 1em; }
+    td, th { padding: 0.5em; }
+    th { text-align: left; }
+    input[type=color] { border: none; width: 50px; height: 25px; cursor: pointer; }
+    .account-row { margin-bottom: 0.5em; }
+    .remove-btn { margin-left: 10px; }
+    .add-section { margin-top: 1em; }
+    .save-status { color: green; margin-left: 1em; }
+  </style>
+</head>
+<body>
+  <h1>AWS Header Colorizer – Options</h1>
+  <p>Configure AWS account → background color mappings.</p>
+
+  <table id="mappingTable">
+    <thead>
+      <tr>
+        <th>AWS Account ID</th>
+        <th>Color</th>
+        <th></th> <!-- remove button column -->
+      </tr>
+    </thead>
+    <tbody id="mappingBody">
+      <!-- Rows appended by options.js -->
+    </tbody>
+  </table>
+
+  <div class="add-section">
+    <h3>Add new mapping:</h3>
+    <label>
+      Account ID:
+      <input type="text" id="newAccountId" placeholder="123456789012" size="15" />
+    </label>
+    <label>
+      Color:
+      <input type="color" id="newColor" value="#ffeb3b" />
+    </label>
+    <button id="addButton">Add</button>
+  </div>
+
+  <p>
+    <button id="saveButton">Save All Changes</button>
+    <span id="saveStatus" class="save-status"></span>
+  </p>
+
+  <script src="options.js"></script>
+</body>
+</html>
